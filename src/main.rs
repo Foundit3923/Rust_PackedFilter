@@ -1,3 +1,10 @@
+// #[path = "implementation/naive.rs"] mod naive;
+// pub(crate) mod naive;
+mod packed_contains;
+mod implementation_naive;
+
+
+
 const LAST_BITS_ON: u64 = 0x101010101010101;
 const SIGNIFICANT_BITS_ON: u64 = 0x8080808080808080;
 
