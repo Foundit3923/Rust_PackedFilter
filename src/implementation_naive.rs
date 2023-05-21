@@ -1,13 +1,21 @@
-use crate::packed_contains::PackedContains;
-use crate::create_tests;
+use crate::packed_contains::{PackedContains};
 
-impl PackedContains for &str {
-  fn packed_contains(
-    self,
-    query: &str
-  ) -> bool {
-    self.contains(query)
+#[derive(Default)]
+pub struct Naive {}
+
+impl Naive {
+  pub fn new() -> Self{
+      Naive {  }
   }
 }
 
-create_tests!();
+impl PackedContains for Naive {
+  fn packed_contains(self: &Naive, text: &str, query: &str) -> bool {
+    if query == "" {
+      return false;
+    }
+    else{
+    text.contains(query)
+    }
+  }
+}
