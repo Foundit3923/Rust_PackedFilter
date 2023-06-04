@@ -10,3 +10,19 @@ libc = "0.2"
 
 [build-dependencies]
 cc = "1.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+incremental = false
+rpath = false
+lto = true
+codegen-units = 1
+panic = 'abort'
