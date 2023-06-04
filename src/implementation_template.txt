@@ -1,9 +1,16 @@
-use crate::packed_contains::PackedContains;
+use crate::packed_contains::{PackedContains};
 
+#[derive(Default)]
 pub struct FOO_CHANGE_ME {}
 
+impl FOO_CHANGE_ME {
+  pub fn new() -> Self{
+      FOO_CHANGE_ME {  }
+  }
+}
+
 impl PackedContains for FOO_CHANGE_ME {
-  fn packed_contains(self, text: &str, query: &str) -> bool {
-   todo!();
+  fn packed_contains(self: &FOO_CHANGE_ME, text: &str, query: &str) -> bool {
+    todo!()
   }
 }
